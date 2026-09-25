@@ -137,7 +137,7 @@ def main():
         col_input, col_config = st.columns([2, 1])
 
         with col_input:
-            input_method = st.radio("Choose Input Method", ["Upload Resume PDF", "Paste Resume Text"], inline=True)
+            input_method = st.radio("Choose Input Method", ["Upload Resume PDF", "Paste Resume Text"], horizontal=True)
             resume_text = ""
 
             if input_method == "Upload Resume PDF":
