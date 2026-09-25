@@ -1,0 +1,17 @@
+Priya Patel
+Email: priya.p@techcorp.com
+Phone: +91 9123456789
+Location: Pune, Maharashtra
+GitHub: github.com/priyapatel
+LinkedIn: linkedin.com/in/priyapateldev
+
+EXPERIENCE:
+Senior Software Engineer - TechCorp Solutions (2021 - Present)
+- Architected microservices with Python and FastAPI.
+- Managed PostgreSQL database clusters.
+
+Software Engineer - Innovate Tech (2019 - 2021)
+- Built web interfaces with React and Node.js.
+
+EDUCATION:
+B.E. in Information Technology, Pune University (2015 - 2019)

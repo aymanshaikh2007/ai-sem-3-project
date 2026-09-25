@@ -1,0 +1,18 @@
+You are a professional HR assistant. Please analyze the following resume and extract all relevant candidate information into a JSON object.
+
+Extract these sections:
+- Personal Info (Name, Email, Phone, Location, LinkedIn, GitHub)
+- Education (Degree, Branch, College, Year, GPA)
+- Technical Skills (Programming, Frameworks, Tools)
+- Experience (Company, Role, Dates, Responsibilities)
+- Projects (Title, Description, Tech Stack)
+- Certifications
+- Languages and Interests
+
+Rules:
+1. Output valid JSON only.
+2. If any detail is missing, set it to null or empty list.
+3. Do not make up facts.
+
+RESUME TEXT:
+{resume_text}

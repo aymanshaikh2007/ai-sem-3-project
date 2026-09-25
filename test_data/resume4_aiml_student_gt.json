@@ -1,0 +1,41 @@
+{
+  "personal_information": {
+    "full_name": "Rohan Gupta",
+    "email": "rohan.aiml@gmail.com",
+    "phone": null,
+    "location": "Delhi, India",
+    "linkedin": null,
+    "github": null,
+    "portfolio": null
+  },
+  "education": [
+    {
+      "degree": "B.Sc.",
+      "field_of_study": "Artificial Intelligence and Machine Learning",
+      "institution": "Delhi University",
+      "graduation_year": "2025",
+      "grade_cgpa": null
+    }
+  ],
+  "skills": {
+    "programming_languages": ["Python"],
+    "frameworks_and_libraries": ["Streamlit"],
+    "databases": [],
+    "tools_and_technologies": ["OpenAI API", "Git"],
+    "other_technical_skills": ["Prompt Engineering"]
+  },
+  "work_experience": [],
+  "projects": [
+    {
+      "project_name": "AI Resume Extractor",
+      "description": "Built a structured resume parser using LLM prompt engineering.",
+      "technologies_used": ["Python", "Streamlit", "OpenAI API"]
+    }
+  ],
+  "certifications": [],
+  "other_information": {
+    "achievements": [],
+    "languages_spoken": [],
+    "areas_of_interest": []
+  }
+}

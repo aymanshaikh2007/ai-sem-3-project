@@ -1,0 +1,15 @@
+Vikram Singh
+Email: vikram.data@gmail.com | Phone: 9876543210
+Location: Bengaluru, Karnataka
+
+SUMMARY:
+Data Scientist with expertise in predictive modeling, PyTorch, and SQL.
+
+SKILLS:
+- Languages: Python, R, SQL
+- ML Tools: PyTorch, Scikit-Learn, TensorFlow
+- Databases: MySQL, MongoDB
+
+EXPERIENCE:
+Data Scientist at Analytics Corp (2022 - Present)
+- Developed customer churn forecasting models using Scikit-Learn.

@@ -1,0 +1,41 @@
+{
+  "personal_information": {
+    "full_name": "Aarav Sharma",
+    "email": "aarav.sharma@gmail.com",
+    "phone": "+91 9820011223",
+    "location": "Mumbai, Maharashtra",
+    "linkedin": "linkedin.com/in/aaravsharma",
+    "github": null,
+    "portfolio": null
+  },
+  "education": [
+    {
+      "degree": "B.Sc.",
+      "field_of_study": "Computer Science",
+      "institution": "Mumbai University",
+      "graduation_year": "2023",
+      "grade_cgpa": "8.6/10"
+    }
+  ],
+  "skills": {
+    "programming_languages": ["Python", "C++", "HTML", "CSS"],
+    "frameworks_and_libraries": ["Pandas", "NumPy"],
+    "databases": ["SQLite"],
+    "tools_and_technologies": ["Git", "VS Code"],
+    "other_technical_skills": []
+  },
+  "work_experience": [],
+  "projects": [
+    {
+      "project_name": "Student Management System",
+      "description": "Developed a Python GUI application using Tkinter and SQLite database.",
+      "technologies_used": ["Python", "Tkinter", "SQLite"]
+    }
+  ],
+  "certifications": [],
+  "other_information": {
+    "achievements": [],
+    "languages_spoken": [],
+    "areas_of_interest": []
+  }
+}

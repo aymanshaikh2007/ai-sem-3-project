@@ -1,0 +1,34 @@
+{
+  "personal_information": {
+    "full_name": "Vikram Singh",
+    "email": "vikram.data@gmail.com",
+    "phone": "9876543210",
+    "location": "Bengaluru, Karnataka",
+    "linkedin": null,
+    "github": null,
+    "portfolio": null
+  },
+  "education": [],
+  "skills": {
+    "programming_languages": ["Python", "R", "SQL"],
+    "frameworks_and_libraries": ["PyTorch", "Scikit-Learn", "TensorFlow"],
+    "databases": ["MySQL", "MongoDB"],
+    "tools_and_technologies": [],
+    "other_technical_skills": ["Predictive Modeling"]
+  },
+  "work_experience": [
+    {
+      "company": "Analytics Corp",
+      "job_title": "Data Scientist",
+      "duration": "2022 - Present",
+      "responsibilities": ["Developed customer churn forecasting models using Scikit-Learn."]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "other_information": {
+    "achievements": [],
+    "languages_spoken": [],
+    "areas_of_interest": []
+  }
+}

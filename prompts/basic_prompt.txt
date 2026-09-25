@@ -1,0 +1,4 @@
+Extract the details from this resume and convert it into JSON format:
+
+RESUME TEXT:
+{resume_text}

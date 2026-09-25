@@ -1,0 +1,21 @@
+# Environment variables
+.env
+
+# Python Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Output Data
+outputs/*.json
+outputs/*.csv
+
+# System files
+.DS_Store
+Thumbs.db

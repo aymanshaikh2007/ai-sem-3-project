@@ -1,0 +1,14 @@
+Rohan Gupta
+Email: rohan.aiml@gmail.com
+Location: Delhi, India
+
+EDUCATION:
+B.Sc. Artificial Intelligence and Machine Learning
+Delhi University (2022 - 2025)
+
+SKILLS:
+Python, Streamlit, Prompt Engineering, OpenAI API, Git
+
+PROJECTS:
+AI Resume Extractor
+- Built a structured resume parser using LLM prompt engineering.

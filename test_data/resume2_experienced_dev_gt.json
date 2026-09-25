@@ -1,0 +1,48 @@
+{
+  "personal_information": {
+    "full_name": "Priya Patel",
+    "email": "priya.p@techcorp.com",
+    "phone": "+91 9123456789",
+    "location": "Pune, Maharashtra",
+    "linkedin": "linkedin.com/in/priyapateldev",
+    "github": "github.com/priyapatel",
+    "portfolio": null
+  },
+  "education": [
+    {
+      "degree": "B.E.",
+      "field_of_study": "Information Technology",
+      "institution": "Pune University",
+      "graduation_year": "2019",
+      "grade_cgpa": null
+    }
+  ],
+  "skills": {
+    "programming_languages": ["Python", "JavaScript"],
+    "frameworks_and_libraries": ["FastAPI", "React", "Node.js"],
+    "databases": ["PostgreSQL"],
+    "tools_and_technologies": [],
+    "other_technical_skills": ["Microservices"]
+  },
+  "work_experience": [
+    {
+      "company": "TechCorp Solutions",
+      "job_title": "Senior Software Engineer",
+      "duration": "2021 - Present",
+      "responsibilities": ["Architected microservices with Python and FastAPI.", "Managed PostgreSQL database clusters."]
+    },
+    {
+      "company": "Innovate Tech",
+      "job_title": "Software Engineer",
+      "duration": "2019 - 2021",
+      "responsibilities": ["Built web interfaces with React and Node.js."]
+    }
+  ],
+  "projects": [],
+  "certifications": [],
+  "other_information": {
+    "achievements": [],
+    "languages_spoken": [],
+    "areas_of_interest": []
+  }
+}

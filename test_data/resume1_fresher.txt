@@ -1,0 +1,19 @@
+Aarav Sharma
+Email: aarav.sharma@gmail.com
+Phone: +91 9820011223
+Location: Mumbai, Maharashtra
+LinkedIn: linkedin.com/in/aaravsharma
+
+EDUCATION:
+B.Sc. in Computer Science
+Mumbai University (2020 - 2023)
+CGPA: 8.6/10
+
+TECHNICAL SKILLS:
+- Languages: Python, C++, HTML, CSS
+- Tools: Git, VS Code
+- Libraries: Pandas, NumPy
+
+PROJECTS:
+Student Management System
+- Developed a Python GUI application using Tkinter and SQLite database.
