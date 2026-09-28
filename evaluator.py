@@ -3,8 +3,6 @@ evaluator.py
 ------------
 Provides evaluation metrics calculation and prompt engineering comparison experiments
 against manually curated ground-truth JSON datasets.
-
-Syllabus Reference: Unit I, Topic 1.3 - Prompt Engineering Performance Evaluation.
 """
 
 import json

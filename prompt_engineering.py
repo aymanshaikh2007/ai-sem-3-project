@@ -3,8 +3,6 @@ prompt_engineering.py
 ---------------------
 Manages the prompt templates and construction logic for extracting structured
 information from resumes using different prompt engineering techniques.
-
-Syllabus Reference: Unit I, Topic 1.3 - Introduction to Prompt Engineering and Modern AI Tooling.
 """
 
 import json

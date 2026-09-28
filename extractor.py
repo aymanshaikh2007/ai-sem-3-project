@@ -138,7 +138,7 @@ class ResumeExtractor:
     def _simulate_offline_llm(self, resume_text: str, prompt_mode: str) -> str:
         """
         Offline fallback LLM simulator based on heuristic regex parsing.
-        Ensures the college project can be demonstrated even without an active OpenAI API Key!
+        Ensures the project can be demonstrated even without an active OpenAI API Key!
         """
         time.sleep(0.5) # Simulate network latency
 

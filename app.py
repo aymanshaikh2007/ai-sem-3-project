@@ -3,8 +3,6 @@ app.py
 ------
 Streamlit Web Application for Prompt Engineering for Structured Data Extraction:
 An AI-Powered Resume Information Extraction System.
-
-Syllabus Reference: Unit I, Topic 1.3 - Introduction to Prompt Engineering and Modern AI Tooling.
 """
 
 import streamlit as st
@@ -66,7 +64,7 @@ st.markdown("""
 def main():
     # Header Banner
     st.markdown('<div class="main-title">Prompt Engineering for Structured Data Extraction</div>', unsafe_allow_html=True)
-    st.markdown('<div class="sub-title">An AI-Powered Resume Information Extraction System | College Project (Subject: Intro to AI)</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sub-title">An AI-Powered Resume Information Extraction System</div>', unsafe_allow_html=True)
 
     # Sidebar Controls
     st.sidebar.header("⚙️ System Configuration")
@@ -76,7 +74,7 @@ def main():
         "OpenAI API Key",
         value=env_api_key,
         type="password",
-        help="Leave blank to automatically use the built-in offline simulator mode for testing/viva presentation!"
+        help="Leave blank to automatically use the built-in offline simulator mode!"
     )
 
     model_option = st.sidebar.selectbox(
@@ -111,13 +109,6 @@ def main():
         help="Set to 0.0 for deterministic, highly predictable structured extraction."
     )
 
-    st.sidebar.markdown("---")
-    st.sidebar.info("""
-    **College Syllabus Mapping:**
-    - **Unit I - Topic 1.3:** Prompt Engineering & AI Tooling.
-    - **Core Focus:** Prompt Design, Rules & Constraints, JSON Structuring, Performance Comparison.
-    """)
-
     # Instantiate Extractor
     extractor = ResumeExtractor(api_key=user_api_key, model_name=model_option)
 
@@ -126,7 +117,7 @@ def main():
         "📄 Resume Extraction",
         "🧪 Prompt Comparison Experiment",
         "📊 Batch Benchmark & Metrics",
-        "📚 Architecture & Syllabus Guide"
+        "📚 System Architecture"
     ])
 
     # =========================================================================
@@ -180,7 +171,7 @@ def main():
                     )
 
                 if res["is_offline_mock"]:
-                    st.info("ℹ️ Running in **Offline Simulator Mode** (No OpenAI key provided). Demonstrates output structuring cleanly for college evaluation.")
+                    st.info("ℹ️ Running in **Offline Simulator Mode** (No OpenAI key provided). Demonstrates output structuring cleanly.")
 
                 # Metric Cards Display
                 m1, m2, m3, m4 = st.columns(4)
@@ -377,16 +368,13 @@ Resume Information Extraction System
             st.warning("`test_data/` folder not found. Please ensure test data files are created.")
 
     # =========================================================================
-    # TAB 4: ARCHITECTURE & VIVA GUIDE
+    # TAB 4: SYSTEM ARCHITECTURE
     # =========================================================================
     with tab4:
-        st.subheader("System Architecture & Viva Examination Guide")
+        st.subheader("System Architecture")
         
-        col_arch, col_viva = st.columns([1, 1])
-
-        with col_arch:
-            st.markdown("### 🏗️ System Workflow Architecture")
-            st.code("""
+        st.markdown("### 🏗️ System Workflow Architecture")
+        st.code("""
 +-------------------------------------------------+
 |               User Resume Input                 |
 |       (PDF Upload or Plain Text Paste)          |
@@ -422,23 +410,6 @@ Resume Information Extraction System
 |       (JSON Viewer, Table, CSV Download)        |
 +-------------------------------------------------+
 """, language="text")
-
-        with col_viva:
-            st.markdown("### 🎓 Syllabus & Viva Quick Reference")
-            st.markdown("""
-            **1. Syllabus Topic:**
-            Unit I, Topic 1.3 - *Introduction to Prompt Engineering & Modern AI Tooling*.
-
-            **2. Core AI Technique:**
-            Prompt Engineering (zero-shot, few-shot, system role definition, output constraint enforcement).
-
-            **3. Key Question: Why Prompt Engineering over Traditional ML?**
-            - Traditional ML requires training dataset annotations, tokenizers, and custom NER models.
-            - Prompt Engineering leverages pre-trained LLM reasoning using natural language instructions to perform zero-shot structured extraction in seconds without training overhead.
-
-            **4. How is Hallucination Prevented?**
-            Through strict prompt rules requiring `null` for missing fields and explicitly instructing the model to reject unmentioned details.
-            """)
 
 
 if __name__ == "__main__":
