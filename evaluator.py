@@ -29,7 +29,11 @@ class ExtractionEvaluator:
                 new_key = f"{parent_key}{sep}{k}" if parent_key else k
                 items.extend(ExtractionEvaluator.flatten_dict(v, new_key, sep=sep).items())
         elif isinstance(d, list):
-            for i, item in enumerate(d):
+            # Sort primitive list items (e.g. skills) for order-independent comparison
+            list_items = d
+            if all(isinstance(x, (str, int, float)) for x in list_items):
+                list_items = sorted(list_items, key=lambda x: str(x).lower())
+            for i, item in enumerate(list_items):
                 new_key = f"{parent_key}[{i}]"
                 items.extend(ExtractionEvaluator.flatten_dict(item, new_key, sep=sep).items())
         else:

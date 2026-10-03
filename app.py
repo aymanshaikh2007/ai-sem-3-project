@@ -66,51 +66,29 @@ def main():
     st.markdown('<div class="main-title">Prompt Engineering for Structured Data Extraction</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-title">An AI-Powered Resume Information Extraction System</div>', unsafe_allow_html=True)
 
-    # Sidebar Controls
+    # Sidebar Controls: Hardcoded Automated Simulator Configuration
     st.sidebar.header("⚙️ System Configuration")
-    
-    env_api_key = os.getenv("OPENAI_API_KEY", "")
-    user_api_key = st.sidebar.text_input(
-        "OpenAI API Key",
-        value=env_api_key,
-        type="password",
-        help="Leave blank to automatically use the built-in offline simulator mode!"
-    )
+    st.sidebar.success("⚡ **Automated Offline Engine Active**\n(API requirements bypassed)")
 
-    model_option = st.sidebar.selectbox(
-        "Select LLM Model",
-        ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4o"],
-        index=0
-    )
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 📊 System Parameters")
+    st.sidebar.info("""
+- **Engine:** Automated Simulator
+- **Model:** Simulated gpt-3.5-turbo
+- **Prompt Mode:** Structured Extraction
+- **Few-Shot:** Disabled (Zero-Shot)
+- **Temperature:** 0.00
+- **API Status:** Not Required
+""")
 
-    prompt_mode = st.sidebar.selectbox(
-        "Prompt Engineering Mode",
-        [
-            "Structured Extraction Prompt",
-            "Detailed Prompt",
-            "Basic Prompt"
-        ],
-        index=0,
-        help="Structured prompt utilizes role-playing, explicit target JSON schema, rules, and null handling."
-    )
-
-    include_few_shot = st.sidebar.checkbox(
-        "Enable Few-Shot Prompting",
-        value=False,
-        help="Injects a 1-shot example input/output pair into the prompt context."
-    )
-
-    temperature = st.sidebar.slider(
-        "LLM Temperature",
-        min_value=0.0,
-        max_value=1.0,
-        value=0.0,
-        step=0.1,
-        help="Set to 0.0 for deterministic, highly predictable structured extraction."
-    )
+    # Hardcoded parameters
+    model_option = "Simulated gpt-3.5-turbo"
+    prompt_mode = "Structured Extraction Prompt"
+    include_few_shot = False
+    temperature = 0.0
 
     # Instantiate Extractor
-    extractor = ResumeExtractor(api_key=user_api_key, model_name=model_option)
+    extractor = ResumeExtractor()
 
     # Main Workspace Tabs
     tab1, tab2, tab3, tab4 = st.tabs([
@@ -148,9 +126,11 @@ def main():
 
         with col_config:
             st.markdown("### Execution Summary")
-            st.write(f"**Mode:** {prompt_mode}")
-            st.write(f"**Few-Shot:** {'Enabled' if include_few_shot else 'Disabled (Zero-Shot)'}")
-            st.write(f"**Execution Mode:** {'API Mode' if extractor.client else 'Offline Simulator Mode'}")
+            st.write(f"**Model:** {model_option}")
+            st.write(f"**Prompt Mode:** {prompt_mode}")
+            st.write(f"**Few-Shot:** Disabled (Zero-Shot)")
+            st.write(f"**Temperature:** {temperature:.2f}")
+            st.write(f"**Execution Engine:** Automated Offline Simulator")
             
             run_btn = st.button("🚀 Run Extraction", type="primary", use_container_width=True)
 
@@ -171,7 +151,10 @@ def main():
                     )
 
                 if res["is_offline_mock"]:
-                    st.info("ℹ️ Running in **Offline Simulator Mode** (No OpenAI key provided). Demonstrates output structuring cleanly.")
+                    if res.get("error_message"):
+                        st.warning(f"⚠️ OpenAI API Call Notice: {res['error_message']} — Switched to Offline Engine to display complete extraction results.")
+                    else:
+                        st.info("ℹ️ Running in **Offline Simulator Mode** (No OpenAI key provided). Demonstrates output structuring cleanly.")
 
                 # Metric Cards Display
                 m1, m2, m3, m4 = st.columns(4)
@@ -302,10 +285,7 @@ Resume Information Extraction System
     # =========================================================================
     with tab3:
         st.subheader("Batch Benchmark & Evaluation Engine")
-        st.markdown("""
-        Evaluates the extraction system against ground-truth data in the `test_data/` directory.
-        Measures Precision, Recall, F1-Score, Field Accuracy, and JSON Validity Rate.
-        """)
+        st.markdown("Evaluates the extraction system against ground-truth data in the `test_data/` directory. Measures Precision, Recall, F1-Score, Field Accuracy, and JSON Validity Rate.")
 
         test_dir = "test_data"
         if os.path.exists(test_dir):
@@ -362,7 +342,22 @@ Resume Information Extraction System
                         st.metric("Field Accuracy", f"{avg_acc:.1f}%")
 
                     st.markdown("### Detailed Batch Test Case Results")
-                    st.dataframe(df_eval, use_container_width=True)
+                    cols_order = [
+                        "Test Case ID", "JSON Valid", "precision", "recall",
+                        "f1_score", "field_accuracy", "missing_field_accuracy",
+                        "correctly_extracted_fields", "total_ground_truth_fields"
+                    ]
+                    df_display = df_eval[[c for c in cols_order if c in df_eval.columns]].copy()
+                    df_display.columns = [
+                        "Test Case ID", "JSON Valid", "Precision", "Recall",
+                        "F1-Score", "Field Accuracy (%)", "Missing Field Acc (%)",
+                        "Matched Fields", "Total GT Fields"
+                    ]
+                    st.dataframe(df_display, use_container_width=True)
+
+                    st.markdown("### 📈 Test Case Accuracy Comparison")
+                    chart_df = df_display.set_index("Test Case ID")[["F1-Score", "Field Accuracy (%)"]]
+                    st.bar_chart(chart_df)
 
         else:
             st.warning("`test_data/` folder not found. Please ensure test data files are created.")
